@@ -10,11 +10,26 @@
 
 
 .main{
-  /* display: flex; */
+  display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .win {  border: 10px solid green;  color: green; }
 .lose {  border: 10px solid red;  color: red; }
 .tie {  border: 10px solid black;  color: black; }
+
+@media (max-width: 768px){
+  .main {
+    flex-direction: column;
+  }
+
+  .box{
+    width:90%;
+  }
+
+  .item-img{
+    width: 100%;
+  }
+}
