@@ -24,9 +24,14 @@ const choice = {
    }
 }
 
+const defaultImg = {
+  name : "Ready",
+  img : "https://img.hankyung.com/photo/202207/AA.30541126.1.jpg"
+}
+
 function App() {
-  const [userSelect, setUserSelect] = useState(null);
-  const [computerSelect, setComputerSelect] = useState(null);
+  const [userSelect, setUserSelect] = useState(defaultImg);
+  const [computerSelect, setComputerSelect] = useState(defaultImg);
   const [result, setResult] = useState("");
 
   const play = (userChoice) => {
@@ -64,9 +69,9 @@ function App() {
         <Box title="Computer" item={computerSelect} result={result}/>
       </div>
       <div className="main">
-        <button onClick={() => play("scissor")}>가위</button>
-        <button onClick={() => play("rock")}>바위</button>
-        <button onClick={() => play("paper")}>보</button>
+        <button onClick={() => play("scissor")}><img src={choice.scissor.img} /></button>
+        <button onClick={() => play("rock")}><img src={choice.rock.img} /></button>
+        <button onClick={() => play("paper")}><img src={choice.paper.img} /></button>
       </div>
     </div>
 
